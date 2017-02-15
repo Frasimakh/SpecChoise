@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/test2(prof-oriet)_style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+
+
+
+    <div class="bodyx">
+
+        <div class="test">
+
+            <div class="question">
+                1. Знайомитися із життям рослин і тварин.
+            </div>
+
+            <form name="form1" action="/" method="post">
+                <label>
+                    <p><input type="radio" name="test" id="pp" value="2"> + +</p></label>
+                <label><p><input type="radio" name="test" id="p" value="1"> +</p></label>
+                <label><p class="label_test"><input type="radio" id="z" name="test" value="0"> 0</p></label>
+                <label><p class="label_test"><input type="radio" name="test" id="m" value="-1"> -</p></label>
+                <label><p class="label_test"><input type="radio" name="test" id="mm" value="-2"> - - </p></label>
+                <p class="next">
+                    <button onclick="next()" class="but1 " type="button">Відповісти</button>
+                </p>
+
+            </form>
+            <br/>
+            <br/>
+            <br/>
+            <form>
+                <button onclick="print_result()" type="button">Завершити тест</button>
+            </form>
+        </div>
+        <div class="text_d">
+            <div class="nadpis">
+                <p>>>Тест "Карта інтересів А.Є. Голомштока</p>
+            </div>
+            <div>
+                <p>
+                    Намагайтеся дати якнайточнішу відповідь на кожне запитання. Якщо ви неодноразово переконалися, що
+                    вам дуже подобається те, про що йдеться, то серед відповідей оберіть "+ +" (два плюси); якщо просто
+                    подобається - "+" (один плюс); якщо не знаєте, не впевнені - "0"; якщо не подобається - "-" (один
+                    мінус); якщо ж дуже не подобається - "- -" (два мінуси). Відповідайте на питання, не минаючи
+                    жодного, і будьте чесні перед собою та не давайте фальшивих відповідей.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="output">
+
+    </div>
+
+    <script>
+        var arr = [];
+        var pp = 2;
+        var p = 1;
+        var z = 0;
+        var m = -1;
+        var mm = -2;
+
+        var n = 0;
+        var questions = [];
+        subj = [0];
+
+
+        // next question
+        function next() {
+            if (n > 171) {  // questions was ended
+                $(".next").empty(); // hiding of "next" button
+            }
+
+
+            //reading of data
+            radiobtn_pp = document.getElementById("pp");
+            radiobtn_p = document.getElementById("p");
+            radiobtn_z = document.getElementById("z");
+            radiobtn_m = document.getElementById("m");
+            radiobtn_mm = document.getElementById("mm");
+
+            if (!radiobtn_pp.checked && !radiobtn_p.checked && !radiobtn_z.checked && !radiobtn_m.checked && !radiobtn_mm.checked) {
+                return; // no item was selected
+            }
+
+            //loading questions from the server
+            if (n == 0) {
+                $.getJSON($SCRIPT_ROOT + '/_prof_calc', {}, function (data) {
+                    questions = data.entries;
+                });
+                $("div.question").empty()
+
+                $(".question").append("<div class='entries'>" + 2 + ". " + "Уроки з географії, читання підручника з географії." + "</div>");
+
+            }
+
+            if (n >= 174) {
+                return;
+            }
+
+            ch();
+            ques_chang();
+            return false;
+        }
+
+
+        function ch() {
+            // result_calculation
+
+            if (document.querySelector('#pp').checked) {
+                arr[n] = pp
+            }
+            if (document.querySelector('#p').checked) {
+                arr[n] = p
+            }
+            if (document.querySelector('#z').checked) {
+                arr[n] = z
+            }
+            if (document.querySelector('#m').checked) {
+                arr[n] = m
+            }
+            if (document.querySelector('#mm').checked) {
+                arr[n] = mm
+            }
+
+            n++;
+
+        }
+
+
+        function ques_chang() {
+            if (n != 1) {
+                $("div.question").empty()
+                $(".question").append("<div class='entries'>" + +(n + 1) + ". " + questions[n] + "</div>");
+            }
+
+            radiobtn_pp.checked = false;
+            radiobtn_p.checked = false;
+            radiobtn_z.checked = false;
+            radiobtn_m.checked = false;
+            radiobtn_mm.checked = false;
+
+        }
+
+        function print_result() {
+            next();
+            for (var i = 0; i <= 29; i++) {
+                subj[i] = 0;
+            }
+            $("div.bodyx").empty()
+
+            for (i = 0; i < arr.length; i++) {
+                k = i;
+                while (k > 28) {
+                    k -= 29
+                }
+                subj[k] += arr[i];
+            }
+
+            subj_text = ['Біологія', 'Географія', 'Геологія', 'Медицина', 'Легка і харчова промисловість', 'Фізика', 'Хімія', 'Техніка', 'Електро- і радіотехніка', 'Металообробка', 'Деревообробка', 'Будівництво', 'Транспорт', 'Авіація, морська справа', 'Військові спеціальності', 'Історія', 'Література', 'Журналістика', 'Громадська діяльність', 'Педагогіка', 'Право, юриспруденція', 'Сфера обслуговування, торгівля', 'Математика', 'Економіка', 'Іноземні мови', 'Образотворче мистецтво', 'Сценічне мистецтво', 'Музика', 'Фізкультура і спорт']
+
+            var r = subj_text.length;
+            for (var i = 0; i < r - 1; i++) {
+                for (var j = 0; j < r - 1 - i; j++) {
+                    if (subj[j + 1] > subj[j]) {
+                        var t = subj[j + 1];
+                        var t2 = subj_text[j + 1];
+                        subj[j + 1] = subj[j];
+                        subj_text[j + 1] = subj_text[j];
+                        subj[j] = t;
+                        subj_text[j] = t2;
+                    }
+                }
+            }
+
+            $(".output").append("<div class='text'><p>Нижче відображено ваш особистий рейтинг професійних інтересів, який може допомогти вам у виборі майбутньої професійної діяльності.</p><p>Авжеж, не всі інтереси мають задовільнятися у професії, і дані результати не мусять кардинально впливати на ваш вибір спеціальності. Вони лише відображають, до чого ви схильні і що вас цікавить. Деякі інтереси можна реалізовувати у вільний час - як хобі чи приватну практику.</p></div>");
+            $(".output").append("<div class='results'>");
+            $(".output").append("<h3 align='center'>Результати:</h3>");
+
+            for (var i = 0; i < 29; i++) {
+                $(".output").append('<li>' + subj_text[i] + ': ' + subj[i] + '</li>');
+            }
+        }
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+

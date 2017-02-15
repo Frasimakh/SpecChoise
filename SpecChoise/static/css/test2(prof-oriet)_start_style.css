@@ -1,0 +1,28 @@
+h2 {
+    font-size: 24px;
+}
+
+
+
+em {
+    padding-left: 30px;
+}
+
+p {
+    padding-top: 10px;
+    text-indent: 1%;
+}
+
+.bodyx {
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    padding-top: 105px;
+    font-size: 17px;
+}
+
+.link {
+    font-size: 20px;
+    margin-top: 20px;
+    float: right;
+    padding-left: 10%;
+    color: #008080;
+}

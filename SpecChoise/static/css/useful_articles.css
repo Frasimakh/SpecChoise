@@ -1,0 +1,63 @@
+em {
+    font-size: 13px;
+}
+
+p {
+    margin: 0px;
+}
+
+.bodyx {
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    padding-top: 130px;
+    display: inline-block;
+}
+
+.zag {
+    padding-right: 30px;
+    color: #5e5e5e;
+}
+
+.zagolovok {
+    font-size: 17px;
+}
+
+.bodyx ul {
+    list-style: none;
+}
+
+.bodyx ul li:before {
+    content: "";
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    width: 11px;
+    height: 11px;
+    background: rgba(0,128,128,1);
+    background: -moz-linear-gradient(left, rgba(0,128,128,1) 0%, rgba(31,148,148,1) 47%, rgba(33,173,173,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,128,128,1)), color-stop(47%, rgba(31,148,148,1)), color-stop(100%, rgba(33,173,173,1)));
+    background: -webkit-linear-gradient(left, rgba(0,128,128,1) 0%, rgba(31,148,148,1) 47%, rgba(33,173,173,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,128,128,1) 0%, rgba(31,148,148,1) 47%, rgba(33,173,173,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,128,128,1) 0%, rgba(31,148,148,1) 47%, rgba(33,173,173,1) 100%);
+    background: linear-gradient(to right, rgba(0,128,128,1) 0%, rgba(31,148,148,1) 47%, rgba(33,173,173,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#21adad', GradientType=1 );
+}
+
+.bodyx ul li {
+    padding-top: 15px;
+}
+
+.bodyx ul li a {
+    text-decoration: none;
+    line-height: 2;
+    font-size: 15px;
+    color: #5e5e5e;
+}
+
+.bodyx ul li a:hover {
+    color: #2d2d2d;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+}

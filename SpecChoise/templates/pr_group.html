@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Довідник
+{% endblock %}
+
+
+
+{% block style %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/pr_group_style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="bodyx">
+        <ul>
+            {% for entry in entries %}
+                <li class="ololo">
+                    <a href="/specialties/{{ name }}/{{ entry[1] }}"> {{ entry[0] }}</a>
+
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

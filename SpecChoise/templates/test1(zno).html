@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Спеціальність за предметами ЗНО
+{% endblock %}
+
+{% block style %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/test1(zno)_style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+
+    <script src={{ url_for('static', filename='js/test1.js') }}></script>
+
+
+    <div class="bodyx">
+        <div class="test">
+            <label><br><input type="checkbox" checked disabled id="ukrainian"> Українська мова та література<br></label>
+            <label><br><input type="checkbox" id="math"> Математика<br></label>
+            <label><br><input type="checkbox" id="physics"> Фізика<br></label>
+            <label> <br><input type="checkbox" id="ukrainian_history"> Історія України<br></label>
+            <label> <br><input type="checkbox" id="foreign_lang"> Англійська мова<br></label>
+            <label> <br><input type="checkbox" id="geography"> Географія<br></label>
+            <label><br><input type="checkbox" id="chemistry"> Хімія<br></label>
+            <label><br><input type="checkbox" id="biology"> Біологія<br></label>
+            <div class="button">
+                <p><a href=# class="link" id="calculate">>>Результат</a></p>
+            </div>
+        </div>
+        <div class="rezult">
+            <div class="information">
+                <em>Просимо звернути увагу, що наведені дані є узагальненими. Кожен ВНЗ сам визначає список ЗНО до зарахування, тож рекомендуємо ознайомитися з ним на сайті бажаного вузу.</em>
+            </div>
+            <div class="result">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

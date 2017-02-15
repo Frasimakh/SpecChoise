@@ -1,0 +1,50 @@
+h2 {
+  margin: 0px;
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  color: #5e5e5e;
+  text-align: center;
+}
+
+h3 {
+  margin: 0px;
+  font-weight: 500;
+  font-size: 19px;
+  padding-left: 60px;
+  font-weight: 600;
+}
+
+
+p {
+  margin: 16px;
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+
+em {
+    margin-top: 15px;
+}
+
+.bodyx {
+  font-family: Arial, Tahoma, Verdana, sans-serif;
+  padding-top: 125px;
+}
+
+.img1 {
+  float: right;
+  -webkit-box-shadow: 0px 0px 20px 1px rgba(207,205,207,1);
+  -moz-box-shadow: 0px 0px 20px 1px rgba(207,205,207,1);
+  box-shadow: 0px 0px 20px 1px rgba(207,205,207,1);
+  margin-left: 12px;
+  margin-bottom: 10px;
+}
+
+.img2 {
+  float: left;
+  -webkit-box-shadow: 0px 0px 20px 1px rgba(207,205,207,1);
+  -moz-box-shadow: 0px 0px 20px 1px rgba(207,205,207,1);
+  box-shadow: 0px 0px 20px 1px rgba(207,205,207,1);
+  margin-right: 12px;
+  margin-bottom: 10px;
+}

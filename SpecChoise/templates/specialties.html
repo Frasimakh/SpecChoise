@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    Довідник спеціальностей
+{% endblock %}
+
+
+
+{% block style %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/specialties_style.css') }}">
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="bodyx">
+        <div class="column1">
+            <ul>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr1") }}"><img
+                        src="{{ url_for('static', filename='pictures_of_professions/1.png') }}" class="img1"
+                        hspace="20px">Будівництво, архітектура, нерухомість</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr2") }}"><img
+                        src="{{ url_for('static', filename='pictures_of_professions/2.png') }}" class="img1"
+                        hspace="20px">Фінанси, бухгалтерія, страхування</a>
+                </li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr3") }}"><img
+                        src="{{ url_for('static', filename='pictures_of_professions/3.png') }}" class="img1"
+                        hspace="20px">Дизайн, мода</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr4") }}"><img
+                        src="{{ url_for('static', filename='pictures_of_professions/4.png') }}" class="img1"
+                        hspace="20px">Керівники, HR-спеціалісти,
+                    рекрутери, кадровики</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr5") }}"><img src="{{ url_for('static', filename='pictures_of_professions/5.png') }}" class="img1"
+                                     hspace="20px">Торгівля, логістика,
+                    зовнішньо-економічна діяльність</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr6") }}"><img src="{{ url_for('static', filename='pictures_of_professions/6.png') }}" class="img1"
+                                     hspace="20px">Дозвілля, відпочинок, туризм</a>
+                </li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr7") }}"><img src="{{ url_for('static', filename='pictures_of_professions/7.png') }}" class="img1"
+                                     hspace="20px">Маркетинг, реклама, PR</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr8") }}"><img src="{{ url_for('static', filename='pictures_of_professions/8.png') }}" class="img1"
+                                     hspace="20px">Правоохоронні і військові професії</a>
+                </li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr9") }}"><img src="{{ url_for('static', filename='pictures_of_professions/9.png') }}" class="img1"
+                                     hspace="20px">Транспорт</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr10") }}"><img src="{{ url_for('static', filename='pictures_of_professions/10.png') }}" class="img1"
+                                     hspace="20px">Сільське господарство, тваринництво</a></li>
+            </ul>
+        </div>
+        <div class="column2">
+            <ul>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr11") }}"><img
+                        src="{{ url_for('static', filename='pictures_of_professions/11.png') }}" class="img2"
+                        hspace="20px">Мистецтво</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr12") }}"><img
+                        src="{{ url_for('static', filename='pictures_of_professions/12.png') }}" class="img2"
+                        hspace="20px">Наука</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr13") }}"><img src="{{ url_for('static', filename='pictures_of_professions/13.png') }}" class="img2"
+                                     hspace="20px">Секретаріат, діловиробництво</a>
+                </li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr14") }}"><img src="{{ url_for('static', filename='pictures_of_professions/14.png') }}" class="img2"
+                                     hspace="20px">Педагогіка, освіта</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr15") }}"><img src="{{ url_for('static', filename='pictures_of_professions/15.png') }}" class="img2"
+                                     hspace="20px">Філологія, ЗМІ, видавництво</a>
+                </li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr16") }}"><img src="{{ url_for('static', filename='pictures_of_professions/16.png') }}" class="img2"
+                                     hspace="20px">Медицина, фармація</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr17") }}"><img src="{{ url_for('static', filename='pictures_of_professions/17.png') }}" class="img2"
+                                     hspace="20px">Промисловість</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr18") }}"><img src="{{ url_for('static', filename='pictures_of_professions/18.png') }}" class="img2"
+                                     hspace="20px">ІТ-технології</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr19") }}"><img src="{{ url_for('static', filename='pictures_of_professions/19.png') }}" class="img2"
+                                     hspace="20px">Політика, зовнішньо-політична
+                    діяльність</a></li>
+                <li><a href="{{ url_for("rendering_of_pr_list", name="pr20") }}"><img src="{{ url_for('static', filename='pictures_of_professions/20.png') }}" class="img2"
+                                     hspace="20px">Сервіс</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

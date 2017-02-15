@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<html lang="ua">
+<meta charset="UTF-8">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/png">
+    <title>{% block title %}{% endblock %}</title>
+    {% block style %}
+    {% endblock %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/base_style.css') }}">
+</head>
+
+<body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src={{ url_for('static', filename='js/arrow.js') }}></script>
+<p id="back-top">
+    <a href="#top"><span></span>Уверх</a>
+</p>
+
+<div class="header">
+
+    <div class="main">
+        <div class="logo">
+            <div class="picture"></div>
+            <div class="texter">
+                <a href="{{ url_for("home") }}">
+                    <h1>
+                        <span style="color: #FF4500;">Spec</span>
+                        <span style="color: #008080;">Choise</span>
+                    </h1>
+                    <div class="line"></div>
+                    <h4>cайт із допомоги у виборі спеціальності</h4></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{{ url_for("home") }}">Головна</a></li>
+                <li><a href="{{ url_for("specialties") }}">Довідник спеціальностей</a></li>
+                <li><a href="{{ url_for("useful_articles") }}">Корисні статті</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="main">
+        {% block body %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

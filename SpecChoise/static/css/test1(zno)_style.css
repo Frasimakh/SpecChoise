@@ -1,0 +1,55 @@
+.bodyx {
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    padding-top: 105px;
+}
+
+.test {
+    width: 40%;
+    font-size: 18px;
+    line-height: 22px;
+    float: left;
+    padding: 20px 28px 20px 28px;
+    margin-top: 60px;
+    -webkit-box-shadow: inset 0px 0px 10px 1px rgba(237, 230, 237, 0.61);
+    -moz-box-shadow: inset 0px 0px 10px 1px rgba(237, 230, 237, 0.61);
+    box-shadow: inset 0px 0px 10px 1px rgba(237, 230, 237, 0.61);
+}
+
+.button {
+    font-size: 20px;
+    margin-top: 20px;
+    float: right;
+    padding-left: 10%;
+    color: #008080;
+}
+
+.link {
+    color: #008080;
+}
+
+.rezult {
+    margin-top: 60px;
+    float: right;
+    width: 50%;
+    color: #5e5e5e;
+    line-height: 20px;
+}
+
+.information {
+    margin-bottom: 20px;
+}
+
+.result {
+    color: #5e5e5e;
+}
+
+.speciality{
+    text-transform: uppercase;
+    color: #148a96;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.subjects{
+    font-size: 18px;
+}

@@ -1,0 +1,50 @@
+.bodyx {
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    padding-top: 95px;
+}
+
+.pidmenu {
+    width: 40%;
+    display: inline-block;
+    float: right;
+    margin-top: 70px;
+    font-size: 23px;
+}
+
+.pidmenu ul {
+    list-style: none;
+    margin: 18px;
+    padding: 0;
+}
+
+.pidmenu ul li {
+    margin: 10px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    border-left: 1px dotted #AEA2A2;
+}
+
+.pidmenu ul li:hover {
+    background: aliceblue;
+}
+
+.pidmenu ul li a {
+    text-decoration: none;
+    line-height: 2;
+    font-weight: 300;
+    font-size: 25px;
+    color: #778899;
+}
+
+.pidmenu ul li a:hover {
+    color: #708090;
+}
+
+.golov {
+    margin-top: 90px;
+    font-size: 16px;
+    line-height: 20px;
+    text-indent: 10px;
+    width: 58%;
+    padding-right: 1%;
+}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ entries[0][0]|safe }}
+{% endblock %}
+
+{% block style %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/article_style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="bodyx">
+        <div class="text">
+            <p class="name">{{ entries[0][0]|safe }}</p>
+            <p class="pfe">
+                <i>{{ entries[0][1]|safe }}</i>
+            </p>
+            <p>{{ entries[0][2]|safe }}</p>
+            <div>
+                <div class="p_name">Близькі професії.</div>
+                <div>
+                    <p>{{ entries[0][3]|safe }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="p_name">Основні обов'язки.</div>
+                <div>
+                    <p> {{ entries[0][4]|safe }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="p_name">Якості, необхідні для цієї професії.</div>
+                <div>
+                    <p>{{ entries[0][5]|safe }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="p_name">Кар'єра і зарлата в Україні.</div>
+                <div>
+                    <p> {{ entries[0][6]|safe }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="p_name">Плюси.</div>
+                <div>
+                    <p>{{ entries[0][7]|safe }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="p_name">Мінуси.</div>
+                <div>
+                    <p>{{ entries[0][8]|safe }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="p_name">Освіта.</div>
+                <div>
+                    <p> {{ entries[0][9]|safe }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="p_name">Середня плата за навчання:</div>
+                <div>
+                    <p> {{ entries[0][10]|safe }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="pidmenu">
+            <ul>
+                {% for profession  in right_list %}
+
+                    {% if profession[1] != entries[0][11]|safe %}
+                        <li>
+                            <a href="/specialties/{{ name }}/{{ profession[1] }}"> {{ profession[0] }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+{% endblock %}
